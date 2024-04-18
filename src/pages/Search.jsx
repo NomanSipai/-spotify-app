@@ -8,6 +8,7 @@ const Search = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsBySearchQuery(searchTerm);
   const songs = data?.tracks?.hits?.map((song) => song.track);
+  console.log(songs);
 
   if (isFetching) return <Loader title="Loading Top Charts" />;
   if (error) return <Error />;
