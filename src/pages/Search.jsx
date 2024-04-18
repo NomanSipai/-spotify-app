@@ -19,7 +19,14 @@ const Search = () => {
       </h2>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {songs?.map((song, i) => (
-          <SongCard key={song.key} song={song} />
+          <SongCard
+            activeSong={activeSong}
+            isPlaying={isPlaying}
+            key={song.key}
+            song={song}
+            i={i}
+            data={data}
+          />
         ))}
       </div>
     </div>
